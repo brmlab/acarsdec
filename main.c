@@ -26,9 +26,14 @@
 
 #include "version.h"
 #include "acarsdec.h"
+#include "acars_labels.h"
+#include "acars_aircrafts.h"
+#include "acars_aircrafts_dot.h"
 
+int posconv(char *txt, unsigned char *label, char *pos);
 extern int optind, opterr;
 extern char *optarg;
+long rx_idx;
 
 static void usage(void)
 {
@@ -47,13 +52,49 @@ void print_mesg(msg_t * msg)
 	struct tm *tmp;
 	char pos[128];
 
-	printf("ACARS mode: %c", msg->mode);
-	printf(" Aircraft reg: %s\n", msg->addr);
-	printf("Message label: %s", msg->label);
-	printf(" Block id: %d", (int) msg->bid);
-	printf(" Msg. no: %s\n", msg->no);
-	printf("Flight id: %s\n", msg->fid);
+	long i=0;
+
+	printf("RX_IDX: %ld\n", rx_idx);
+	printf("ACARS mode: %c, ", msg->mode);
+	printf("message label: %s\n", msg->label);
+	while(acars_labels[i][0]){
+		if(!strcmp(acars_labels[i][0],(const char*)msg->label)){
+			printf("ACARS ML description: %s\n",acars_labels[i][1]);
+			break;
+		}
+		i++;
+	}
+
+	printf("Aircraft reg: %s, ", msg->addr);
+	printf("flight id: %s\n", msg->fid);
+	i=0;
+	while(acars_aircrafts[i][0]){
+		if(!strcmp(acars_aircrafts[i][0],(const char*)msg->addr)){
+			printf("Aircraft type: %s, ",acars_aircrafts[i][2]);
+			printf("carrier: %s, ",acars_aircrafts[i][1]);
+			printf("cn: %s\n",acars_aircrafts[i][3]);
+			break;
+		}
+		i++;
+	}
+
+	i=0;
+	while(acars_aircrafts_dot[i][0]){
+		if(!strcmp(acars_aircrafts_dot[i][0],(const char*)msg->addr)){
+			printf("Aircraft type: %s, ",acars_aircrafts_dot[i][2]);
+			printf("carrier: %s, ",acars_aircrafts_dot[i][1]);
+			printf("cn: %s\n",acars_aircrafts_dot[i][3]);
+			break;
+		}
+		i++;
+	}
+
+
+	printf("Block id: %d, ", (int) msg->bid);
+	printf(" msg. no: %s\n", msg->no);
 	printf("Message content:-\n%s", msg->txt);
+
+	rx_idx++;
 
     if (posconv(msg->txt, msg->label, pos)==0)
         printf("\nAPRS : Addr:%s Fid:%s Lbl:%s pos:%s\n", msg->addr, msg->fid,msg->label,pos);
