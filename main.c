@@ -27,7 +27,7 @@
 #include "version.h"
 #include "acarsdec.h"
 #include "acars_labels.h"
-#include "acars_aircrafts.h"
+#include "acars_aircrafts_secondary.h"
 
 int posconv(char *txt, unsigned char *label, char *pos);
 extern int optind, opterr;
@@ -171,14 +171,14 @@ void print_mesg(msg_t * msg)
 	}
 
 	i=0;
-	while(acars_aircrafts[i].reg){
+	while(acars_aircrafts_secondary[i].reg){
 		const char *regtmp = (const char *) msg->addr;
 		if (regtmp[0] == '.')
 			regtmp++;
-		if(!strcmp(acars_aircrafts[i].reg, regtmp)){
-			printf("Aircraft type: %s, ",acars_aircrafts[i].type);
-			printf("carrier: %s, ",acars_aircrafts[i].carrier_icao);
-			printf("cn: %s\n",acars_aircrafts[i].cn);
+		if(!strcmp(acars_aircrafts_secondary[i].reg, regtmp)){
+			printf("Aircraft type: %s, ",acars_aircrafts_secondary[i].type);
+			printf("carrier: %s, ",acars_aircrafts_secondary[i].carrier_icao);
+			printf("cn: %s\n",acars_aircrafts_secondary[i].cn);
 			break;
 		}
 		i++;
