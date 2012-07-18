@@ -45,6 +45,91 @@ static void usage(void)
 	exit(1);
 }
 
+struct acars_aircraft_primary {
+	char *reg;
+	char *vendor;
+	char *short_type;
+	char *full_type;
+	char *cn;
+	char *carrier_iata;
+	char *carrier_icao;
+	char *remarks;
+};
+
+struct acars_aircraft_primary acars_aircrafts_primary[16000];
+
+void load_aircraft_primary(void)
+{
+	FILE *f = fopen("sourcedata/aircrafts.txt", "r");
+	if (!f) {
+		fprintf(stderr, "Warning: sourcedata/aircrafts.txt data source not found\n");
+		acars_aircrafts_primary[0].reg = NULL;
+		return;
+	}
+
+	int i = 0;
+
+	char *line = NULL;
+	size_t len = 0;
+	while (getline(&line, &len, f) != -1) {
+		/* "line" is pointer to a line from a file */
+		char *item = line;
+		char *tabpos;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) continue;
+		tabpos[0] = 0;
+		acars_aircrafts_primary[i].reg = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) continue;
+		tabpos[0] = 0;
+		acars_aircrafts_primary[i].vendor = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) continue;
+		tabpos[0] = 0;
+		acars_aircrafts_primary[i].short_type = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) continue;
+		tabpos[0] = 0;
+		acars_aircrafts_primary[i].full_type = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) continue;
+		tabpos[0] = 0;
+		acars_aircrafts_primary[i].cn = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) continue;
+		tabpos[0] = 0;
+		acars_aircrafts_primary[i].carrier_iata = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) continue;
+		tabpos[0] = 0;
+		acars_aircrafts_primary[i].carrier_icao = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		tabpos[0] = 0;
+		acars_aircrafts_primary[i].remarks = strdup(item);
+
+		i++;
+	}
+
+	acars_aircrafts_primary[i].reg = NULL;
+	fclose(f);
+}
+
+
 void print_mesg(msg_t * msg)
 {
 	time_t t;
@@ -66,6 +151,25 @@ void print_mesg(msg_t * msg)
 
 	printf("Aircraft reg: %s, ", msg->addr);
 	printf("flight id: %s\n", msg->fid);
+
+	i=0;
+	while(acars_aircrafts_primary[i].reg){
+		const char *regtmp = (const char *) msg->addr;
+		if (regtmp[0] == '.')
+			regtmp++;
+		if(!strcmp(acars_aircrafts_primary[i].reg, regtmp)){
+			printf("Aircraft vendor: %s, ",acars_aircrafts_primary[i].vendor);
+			printf("short type: %s, ",acars_aircrafts_primary[i].short_type);
+			printf("full type: %s, ",acars_aircrafts_primary[i].full_type);
+			printf("cn: %s\n",acars_aircrafts_primary[i].cn);
+			printf("Carrier IATA: %s, ",acars_aircrafts_primary[i].carrier_iata);
+			printf("ICAO: %s, ",acars_aircrafts_primary[i].carrier_icao);
+			printf("remarks: %s\n",acars_aircrafts_primary[i].remarks);
+			goto aircraft_finished;
+		}
+		i++;
+	}
+
 	i=0;
 	while(acars_aircrafts[i].reg){
 		const char *regtmp = (const char *) msg->addr;
@@ -79,6 +183,8 @@ void print_mesg(msg_t * msg)
 		}
 		i++;
 	}
+
+aircraft_finished:
 
 	printf("Block id: %d, ", (int) msg->bid);
 	printf(" msg. no: %s\n", msg->no);
@@ -145,6 +251,8 @@ int main(int argc, char **argv)
 		
 
 /* main loop */
+
+	load_aircraft_primary();
 
 	init_bits();
 	init_mesg();
