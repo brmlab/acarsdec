@@ -28,7 +28,6 @@
 #include "acarsdec.h"
 #include "acars_labels.h"
 #include "acars_aircrafts.h"
-#include "acars_aircrafts_dot.h"
 
 int posconv(char *txt, unsigned char *label, char *pos);
 extern int optind, opterr;
@@ -69,7 +68,10 @@ void print_mesg(msg_t * msg)
 	printf("flight id: %s\n", msg->fid);
 	i=0;
 	while(acars_aircrafts[i].reg){
-		if(!strcmp(acars_aircrafts[i].reg,(const char*)msg->addr)){
+		const char *regtmp = (const char *) msg->addr;
+		if (regtmp[0] == '.')
+			regtmp++;
+		if(!strcmp(acars_aircrafts[i].reg, regtmp)){
 			printf("Aircraft type: %s, ",acars_aircrafts[i].type);
 			printf("carrier: %s, ",acars_aircrafts[i].carrier_icao);
 			printf("cn: %s\n",acars_aircrafts[i].cn);
@@ -77,18 +79,6 @@ void print_mesg(msg_t * msg)
 		}
 		i++;
 	}
-
-	i=0;
-	while(acars_aircrafts_dot[i].reg){
-		if(!strcmp(acars_aircrafts_dot[i].reg,(const char*)msg->addr)){
-			printf("Aircraft type: %s, ",acars_aircrafts_dot[i].type);
-			printf("carrier: %s, ",acars_aircrafts_dot[i].carrier_icao);
-			printf("cn: %s\n",acars_aircrafts_dot[i].cn);
-			break;
-		}
-		i++;
-	}
-
 
 	printf("Block id: %d, ", (int) msg->bid);
 	printf(" msg. no: %s\n", msg->no);
