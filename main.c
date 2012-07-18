@@ -77,43 +77,43 @@ void load_aircraft_primary(void)
 		char *tabpos;
 
 		tabpos = strchr(item, '\t');
-		if (!tabpos) continue;
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
 		tabpos[0] = 0;
 		acars_aircrafts_primary[i].reg = strdup(item);
 		item = tabpos + 1;
 
 		tabpos = strchr(item, '\t');
-		if (!tabpos) continue;
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
 		tabpos[0] = 0;
 		acars_aircrafts_primary[i].vendor = strdup(item);
 		item = tabpos + 1;
 
 		tabpos = strchr(item, '\t');
-		if (!tabpos) continue;
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
 		tabpos[0] = 0;
 		acars_aircrafts_primary[i].short_type = strdup(item);
 		item = tabpos + 1;
 
 		tabpos = strchr(item, '\t');
-		if (!tabpos) continue;
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
 		tabpos[0] = 0;
 		acars_aircrafts_primary[i].full_type = strdup(item);
 		item = tabpos + 1;
 
 		tabpos = strchr(item, '\t');
-		if (!tabpos) continue;
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
 		tabpos[0] = 0;
 		acars_aircrafts_primary[i].cn = strdup(item);
 		item = tabpos + 1;
 
 		tabpos = strchr(item, '\t');
-		if (!tabpos) continue;
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
 		tabpos[0] = 0;
 		acars_aircrafts_primary[i].carrier_iata = strdup(item);
 		item = tabpos + 1;
 
 		tabpos = strchr(item, '\t');
-		if (!tabpos) continue;
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
 		tabpos[0] = 0;
 		acars_aircrafts_primary[i].carrier_icao = strdup(item);
 		item = tabpos + 1;
