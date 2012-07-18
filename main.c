@@ -68,22 +68,22 @@ void print_mesg(msg_t * msg)
 	printf("Aircraft reg: %s, ", msg->addr);
 	printf("flight id: %s\n", msg->fid);
 	i=0;
-	while(acars_aircrafts[i][0]){
-		if(!strcmp(acars_aircrafts[i][0],(const char*)msg->addr)){
-			printf("Aircraft type: %s, ",acars_aircrafts[i][2]);
-			printf("carrier: %s, ",acars_aircrafts[i][1]);
-			printf("cn: %s\n",acars_aircrafts[i][3]);
+	while(acars_aircrafts[i].reg){
+		if(!strcmp(acars_aircrafts[i].reg,(const char*)msg->addr)){
+			printf("Aircraft type: %s, ",acars_aircrafts[i].type);
+			printf("carrier: %s, ",acars_aircrafts[i].carrier_icao);
+			printf("cn: %s\n",acars_aircrafts[i].cn);
 			break;
 		}
 		i++;
 	}
 
 	i=0;
-	while(acars_aircrafts_dot[i][0]){
-		if(!strcmp(acars_aircrafts_dot[i][0],(const char*)msg->addr)){
-			printf("Aircraft type: %s, ",acars_aircrafts_dot[i][2]);
-			printf("carrier: %s, ",acars_aircrafts_dot[i][1]);
-			printf("cn: %s\n",acars_aircrafts_dot[i][3]);
+	while(acars_aircrafts_dot[i].reg){
+		if(!strcmp(acars_aircrafts_dot[i].reg,(const char*)msg->addr)){
+			printf("Aircraft type: %s, ",acars_aircrafts_dot[i].type);
+			printf("carrier: %s, ",acars_aircrafts_dot[i].carrier_icao);
+			printf("cn: %s\n",acars_aircrafts_dot[i].cn);
 			break;
 		}
 		i++;

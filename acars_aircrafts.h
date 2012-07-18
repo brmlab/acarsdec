@@ -1,4 +1,11 @@
-const char * acars_aircrafts[][4]={
+struct acars_aircraft {
+	char *reg;
+	char *carrier_icao;
+	char *type;
+	char *cn;
+};
+
+const struct acars_aircraft acars_aircrafts[]={
 {"0001", "---", "Airbus A319CJ", "1468"},
 {"00355S", "USM", "Boeing KC-135R", "18130"},
 {"01", "USM", "Gulfstream C-37", "653"},

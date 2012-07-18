@@ -1,4 +1,13 @@
-const char * acars_aircrafts_dot[][4]={
+#if 0
+struct acars_aircraft {
+	char *reg;
+	char *carrier_icao;
+	char *type;
+	char *cn;
+};
+#endif
+
+const struct acars_aircraft acars_aircrafts_dot[]={
 {".0001", "---", "Airbus A319CJ", "1468"},
 {".00355S", "USM", "Boeing KC-135R", "18130"},
 {".01", "USM", "Gulfstream C-37", "653"},
