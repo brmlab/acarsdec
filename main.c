@@ -26,8 +26,7 @@
 
 #include "version.h"
 #include "acarsdec.h"
-#include "acars_labels.h"
-#include "acars_aircrafts_secondary.h"
+//#include "acars_aircrafts_secondary.h"
 
 int posconv(char *txt, unsigned char *label, char *pos);
 extern int optind, opterr;
@@ -56,13 +55,158 @@ struct acars_aircraft_primary {
 	char *remarks;
 };
 
-struct acars_aircraft_primary acars_aircrafts_primary[16000];
+struct acars_aircraft_primary acars_aircrafts_primary[64000];
+
+struct acars_aircraft_secondary {
+	char *reg;
+	char *type;
+	char *carrier_icao;
+	char *cn;
+};
+
+struct acars_aircraft_secondary acars_aircrafts_secondary[64000];
+
+
+struct acars_ml {
+	char *ml_code;
+	char *ml_label;
+};
+
+struct acars_ml acars_mls[16000];
+
+struct acars_airlines {
+	char *al_code;
+	char *al_label;
+};
+
+struct acars_airlines acars_airliness[16000];
+
+
+void load_aircraft_secondary(void)
+{
+	FILE *f = fopen("datasets/aircrafts_s.txt", "r");
+	if (!f) {
+		fprintf(stderr, "Warning: datasets/aircrafts_s.txt data source not found\n");
+		acars_aircrafts_secondary[0].reg = NULL;
+		return;
+	}
+
+	int i = 0;
+
+	char *line = NULL;
+	size_t len = 0;
+	while (getline(&line, &len, f) != -1) {
+		char *item = line;
+		char *tabpos;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
+		tabpos[0] = 0;
+		acars_aircrafts_secondary[i].reg = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
+		tabpos[0] = 0;
+		acars_aircrafts_secondary[i].carrier_icao = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
+		tabpos[0] = 0;
+		acars_aircrafts_secondary[i].type = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		tabpos[0] = 0;
+		acars_aircrafts_secondary[i].cn = strdup(item);
+
+		i++;
+	}
+
+	acars_aircrafts_secondary[i].reg = NULL;
+	fclose(f);
+	printf("Loaded: %i secondary aircrafts from dataset.....\n", i);
+}
+
+
+
+void load_airlines(void)
+{
+	FILE *f = fopen("datasets/airlines.txt", "r");
+	if (!f) {
+		fprintf(stderr, "Warning: datasets/airlines.txt data source not found\n");
+		acars_airliness[0].al_code = NULL;
+		return;
+	}
+
+	int i = 0;
+
+	char *line = NULL;
+	size_t len = 0;
+	while (getline(&line, &len, f) != -1) {
+		char *item = line;
+		char *tabpos;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
+		tabpos[0] = 0;
+		acars_airliness[i].al_code = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		tabpos[0] = 0;
+		acars_airliness[i].al_label = strdup(item);
+
+		i++;
+	}
+
+	acars_airliness[i].al_code = NULL;
+	fclose(f);
+	printf("Loaded: %i airlines from dataset.....\n", i);
+}
+
+void load_message_labels(void)
+{
+	FILE *f = fopen("datasets/acars_mls.txt", "r");
+	if (!f) {
+		fprintf(stderr, "Warning: datasets/acars_mls.txt data source not found\n");
+		acars_mls[0].ml_code = NULL;
+		return;
+	}
+
+	int i = 0;
+
+	char *line = NULL;
+	size_t len = 0;
+	while (getline(&line, &len, f) != -1) {
+		char *item = line;
+		char *tabpos;
+
+		tabpos = strchr(item, '\t');
+		if (!tabpos) { fprintf(stderr, "Parse error on line: %s\n", line); continue; }
+		tabpos[0] = 0;
+		acars_mls[i].ml_code = strdup(item);
+		item = tabpos + 1;
+
+		tabpos = strchr(item, '\t');
+		tabpos[0] = 0;
+		acars_mls[i].ml_label = strdup(item);
+
+		i++;
+	}
+
+	acars_mls[i].ml_code = NULL;
+	fclose(f);
+	printf("Loaded: %i ACARS message labels from dataset.....\n", i);
+}
+
 
 void load_aircraft_primary(void)
 {
-	FILE *f = fopen("sourcedata/aircrafts.txt", "r");
+	FILE *f = fopen("datasets/aircrafts_p.txt", "r");
 	if (!f) {
-		fprintf(stderr, "Warning: sourcedata/aircrafts.txt data source not found\n");
+		fprintf(stderr, "Warning: datasets/aircrafts_p.txt data source not found\n");
 		acars_aircrafts_primary[0].reg = NULL;
 		return;
 	}
@@ -127,6 +271,7 @@ void load_aircraft_primary(void)
 
 	acars_aircrafts_primary[i].reg = NULL;
 	fclose(f);
+	printf("Loaded: %i primary aircrafts from dataset.....\n", i);
 }
 
 
@@ -141,6 +286,7 @@ void print_mesg(msg_t * msg)
 	printf("RX_IDX: %ld\n", rx_idx);
 	printf("ACARS mode: %c, ", msg->mode);
 	printf("message label: %s\n", msg->label);
+/*
 	while(acars_labels[i][0]){
 		if(!strcmp(acars_labels[i][0],(const char*)msg->label)){
 			printf("ACARS ML description: %s\n",acars_labels[i][1]);
@@ -148,6 +294,16 @@ void print_mesg(msg_t * msg)
 		}
 		i++;
 	}
+*/
+
+	i=0;
+	while(acars_mls[i].ml_code){
+		if(!strcmp(acars_mls[i].ml_code, (const char*)msg->label)){
+			printf("ACARS ML description: %s\n",acars_mls[i].ml_label);
+		}
+		i++;
+	}
+
 
 	printf("Aircraft reg: %s, ", msg->addr);
 	printf("flight id: %s\n", msg->fid);
@@ -165,6 +321,20 @@ void print_mesg(msg_t * msg)
 			printf("Carrier IATA: %s, ",acars_aircrafts_primary[i].carrier_iata);
 			printf("ICAO: %s, ",acars_aircrafts_primary[i].carrier_icao);
 			printf("remarks: %s\n",acars_aircrafts_primary[i].remarks);
+
+			long x = 0;
+			while(acars_airliness[x].al_code){
+				if(!strcmp(acars_airliness[x].al_code, acars_aircrafts_primary[i].carrier_icao)){
+					printf("Airlines: %s\n",acars_airliness[x].al_label);
+					break;
+				}else if(!strcmp(acars_airliness[x].al_code, acars_aircrafts_primary[i].carrier_iata)){
+					printf("Airlines: %s\n",acars_airliness[x].al_label);
+					break;
+				}
+				x++;
+			}
+
+
 			goto aircraft_finished;
 		}
 		i++;
@@ -179,6 +349,16 @@ void print_mesg(msg_t * msg)
 			printf("Aircraft type: %s, ",acars_aircrafts_secondary[i].type);
 			printf("carrier: %s, ",acars_aircrafts_secondary[i].carrier_icao);
 			printf("cn: %s\n",acars_aircrafts_secondary[i].cn);
+
+			long x = 0;
+			while(acars_airliness[x].al_code){
+				if(!strcmp(acars_airliness[x].al_code, acars_aircrafts_secondary[i].carrier_icao)){
+					printf("Airlines: %s\n",acars_airliness[x].al_label);
+					break;
+				}
+				x++;
+			}
+
 			break;
 		}
 		i++;
@@ -189,6 +369,11 @@ aircraft_finished:
 	printf("Block id: %d, ", (int) msg->bid);
 	printf(" msg. no: %s\n", msg->no);
 	printf("Message content:-\n%s", msg->txt);
+
+//	char *fobpos;
+//	fobpos = strchr(msg->txt, '/FOB');
+//	if(){
+//	}
 
 	rx_idx++;
 
@@ -253,7 +438,9 @@ int main(int argc, char **argv)
 /* main loop */
 
 	load_aircraft_primary();
-
+	load_aircraft_secondary();
+	load_message_labels();
+	load_airlines();
 	init_bits();
 	init_mesg();
 

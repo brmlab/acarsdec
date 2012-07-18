@@ -1,0 +1,527 @@
+BIE	Air Mediterranee	
+DUB	Dubai Air Wing / Royal Flight	
+EIR	EirJet	
+PTI	PrivatAir	
+QSC	Africa Safari Airways	
+TFL	Arke Fly	
+TOM	ThomsenFly	
+VQ	JetStar	
+1I	Novair	
+NVR	Novair	
+1R	Australian Air Force	
+2R	Star Airlines	
+3U	Sichuan Airlines	
+CSC	Sichuan Airlines	
+3V	TNT Airways	
+TAY	TNT Airways	
+4R	Hamburg Int'l	
+HHI	Hamburg Int'l	
+4T	Belair	
+BHP	Belair	
+4U	Germanwings	
+GWI	Germanwings	
+5G	SkyService	
+SSV	SkyService	
+5X	United Parcel Service	
+5Y	Atlas Air	
+GTI	Atlas Air	
+6B	Britannia Airways Sverige	
+BLX	Britannia Airways Sverige	
+6X	Belgium Air Force	
+BAF	Belgium Air Force	
+7D	Donbassaero	
+UDC	Donbassaero	
+8Q	Onur Air	
+OHY	Onur Air	
+8R	Edelweiss Air	
+EDW	Edelweiss Air	
+8U	Afriqiyah Airways	
+AAW	Afriqiyah Airways	
+9E	Northwest Airlink	
+FLG	Northwest Airlink	
+9W	Jet Airways	
+JAI	Jet Airways	
+A2	Cielos del Peru	
+CIU	Cielos del Peru	
+A9	Air Zena Georgian Airlines	
+TGL	Air Zena Georgian Airlines	
+AA	American Airlines	
+AAL	American Airlines	
+AB	Air Berlin	
+BER	Air Berlin	
+AC	Air Canada	
+ACA	Air Canada	
+AE	Mandarin Airlines	
+MDA	Mandarin Airlines	
+AF	Air France	
+AFR	Air France	
+AH	Air Algerie	
+DAH	Air Algerie	
+AI	Air India	
+AIC	Air India	
+AM	Aeromexico	
+AMX	Aeromexico	
+AO	Australian Airlines	
+AUZ	Australian Airlines	
+AP	Airbus Test	
+AIB	Airbus Test	
+AQ	Aloha Airlines	
+AAH	Aloha Airlines	
+AR	Aerolineas Argentinas	
+ARG	Aerolineas Argentinas	
+AS	Alaska Airlines	
+ASA	Alaska Airlines	
+AT	Royal Air Maroc	
+RAM	Royal Air Maroc	
+AY	Finnair	
+FIN	Finnair	
+AZ	Alitalia	
+AZA	Alitalia	
+B2	Belavia	
+BRU	Belavia	
+B4	Flyglobespan.com	
+GSM	Flyglobespan.com	
+B6	JetBlue Airways	
+JBU	JetBlue Airways	
+BA	British Airways	
+BAW	British Airways	
+BD	bmi British Midland/bmibaby	
+BMA	bmi British Midland/bmibaby	
+BJ	Nouvelair Tunisie	
+LBT	Nouvelair Tunisie	
+BO	Boeing	
+BR	EVA Airways Corporation	
+EVA	EVA Airways Corporation	
+BT	Air Baltic	
+BTI	Air Baltic	
+BU	Braathens	
+BRA	Braathens	
+BW	BWIA West Indies Airways	
+BWA	BWIA West Indies Airways	
+BY	Thomsen.com	
+BAL	Thomsen.com	
+C6	CanJet	
+CJA	CanJet	
+C8	Chicago Express Airlines/ATA Connection	
+WDY	Chicago Express Airlines/ATA Connection	
+C9	Cirrus Air	
+RUS	Cirrus Air	
+CA	Air China	
+CCA	Air China	
+CC	Air Atlanta Icelandic	
+ABD	Air Atlanta Icelandic	
+CF	City Airline	
+SDR	City Airline	
+CI	China Airlines	
+CAL	China Airlines	
+CJ	China Northern Airlines	
+CBF	China Northern Airlines	
+CK	China Cargo Airlines	
+CKK	China Cargo Airlines	
+CM	Copa Airlines	
+CMP	Copa Airlines	
+CO	Continental Airlines	
+COA	Continental Airlines	
+CU	Cubana de Aviacion	
+CUB	Cubana de Aviacion	
+CV	Cargolux	
+CLX	Cargolux	
+CX	Cathay Pacific	
+CPA	Cathay Pacific	
+CY	Cyprus Airways	
+CYP	Cyprus Airways	
+CZ	China Southern Airlines	
+CSN	China Southern Airlines	
+DE	Condor	
+CFG	Condor	
+DH	Independence Air	
+IDE	Independence Air	
+DI	FlyDBA	
+BAG	FlyDBA	
+DK	MyTravel Airways	
+VKG	MyTravel Airways	
+DL	Delta Air Lines	
+DAL	Delta Air Lines	
+DN	Daimler Chrysler Aviation	
+DCS	Daimler Chrysler Aviation	
+DP	First Choice Airways	
+FCA	First Choice Airways	
+DQ	Star Air	
+SRR	Star Air	
+DS	EasyJet Switzerland	
+EZS	EasyJet Switzerland	
+EG	Japan Asia Airways	
+JAA	Japan Asia Airways	
+EI	Aer Lingus	
+EIN	Aer Lingus	
+EK	Emirates	
+UAE	Emirates	
+El	Air Nippon	
+ANK	Air Nippon	
+ER	DHL Worldwide Express	
+DHL	DHL Worldwide Express	
+ET	Ethiopian Airlines	
+ETH	Ethiopian Airlines	
+EY	Etihad Airways	
+ETD	Etihad Airways	
+F9	Frontier Airlines	
+FFT	Frontier Airlines	
+FB	Bulgaria Air	
+LZB	Bulgaria Air	
+FC	Finncomm	
+FD	Ford Motors	
+FOB	Ford Motors	
+FG	Ariana Afghan Airlines	
+AFG	Ariana Afghan Airlines	
+FJ	Air Pacific	
+FJI	Air Pacific	
+FL	AirTran Airways	
+TRS	AirTran Airways	
+FM	French Air Force / Government	
+FMY	French Air Force / Government	
+FO	Ford Motors	
+FOB	Ford Motors	
+FP	TAG Aviation	
+FPG	TAG Aviation	
+FR	Ryanair	
+RYR	Ryanair	
+FX	FedEx/Federal Express	
+FDX	FedEx/Federal Express	
+GA	Garuda Indonesia	
+GIA	Garuda Indonesia	
+GF	Gulf Air	
+GFA	Gulf Air	
+GJ	Eurofly	
+EEZ	Eurofly	
+GL	Air Greenland	
+GRN	Air Greenland	
+GR	Gemini Air Cargo	
+GCO	Gemini Air Cargo	
+GS	General Aviation	
+GT	GB Airways	
+GBL	GB Airways	
+GV	AeroFlight	
+ARF	AeroFlight	
+HA	Hawaiian Airlines	
+HAL	Hawaiian Airlines	
+HF	Hapag-Lloyd	
+HLF	Hapag-Lloyd	
+HG	FlyNiki	
+NLY	FlyNiki	
+HH	Islandsflug	
+ICB	Islandsflug	
+HM	Air Seychelles	
+SEY	Air Seychelles	
+HO	Hola Airlines	
+HOA	Hola Airlines	
+HP	America West Airlines	
+AWE	America West Airlines	
+HU	Hainan Airlines	
+CHH	Hainan Airlines	
+HV	Transavia	
+TRA	Transavia	
+IB	Iberia	
+IBE	Iberia	
+IG	Meridiana	
+ISS	Meridiana	
+IM	MenaJet	
+MNJ	MenaJet	
+IV	WindJet	
+JET	WindJet	
+IY	Yemenia	
+IYE	Yemenia	
+JA	Japan Airlines	
+JAL	Japan Airlines	
+JC	JAL Express	
+JEX	JAL Express	
+JD	Japan Air System	
+JAS	Japan Air System	
+JJ	TAM-Transportes Aereos Meridionais	
+TAM	TAM-Transportes Aereos Meridionais	
+JK	Spanair	
+JKK	Spanair	
+JM	Air Jamaica	
+AJM	Air Jamaica	
+JN	Excel Airways	
+XLA	Excel Airways	
+JO	JALWays	
+JAZ	JALWays	
+JP	Adria Airways	
+ADR	Adria Airways	
+JQ	JetStar Airways	
+JST	JetStar Airways	
+JU	JAT Yugoslav Airlines	
+JAT	JAT Yugoslav Airlines	
+KA	Dragonair	
+HDA	Dragonair	
+KB	Druk Air	
+DRK	Druk Air	
+KE	Korean Air	
+KAL	Korean Air	
+KF	Blue1	
+BLF	Blue1	
+KJ	British Mediterranean Airways	
+LAJ	British Mediterranean Airways	
+KK	AtlasJet	
+OGE	AtlasJet	
+KL	KLM Royal Dutch Airlines	
+KLM	KLM Royal Dutch Airlines	
+KM	Air Malta	
+AMC	Air Malta	
+KQ	Kenya Airways	
+KQA	Kenya Airways	
+KU	Kuwait Airways	
+KAC	Kuwait Airways	
+KZ	Nippon Cargo Airlines	
+NCA	Nippon Cargo Airlines	
+L3	LTU Austria	
+LTO	LTU Austria	
+L4	Lauda Air Italy	
+LDI	Lauda Air Italy	
+LA	Lan Chile	
+LAN	Lan Chile	
+LD	Air Hong Kong	
+AHK	Air Hong Kong	
+LG	Luxair	
+LGL	Luxair	
+LH	Lufthansa	
+DLH	Lufthansa	
+LK	Air Luxor	
+LXR	Air Luxor	
+LM	Livingston	
+LVG	Livingston	
+LO	LOT Polish Airlines	
+LOT	LOT Polish Airlines	
+LS	Channel Express	
+EXS	Channel Express	
+LT	LTU International Airways	
+LTU	LTU International Airways	
+LX	Swiss International Air Lines/Crossair	
+SWR	Swiss International Air Lines/Crossair	
+LY	El Al	
+ELY	El Al	
+MA	Malev	
+MAH	Malev	
+MC	Air Mobility Command  (AMC)	
+RCH	Air Mobility Command  (AMC)	
+ME	MEA Middle East Airlines	
+MEA	MEA Middle East Airlines	
+MF	Xiamen Airlines	
+CXA	Xiamen Airlines	
+MH	Malaysia Airlines	
+MAS	Malaysia Airlines	
+MK	Air Mauritius	
+MAU	Air Mauritius	
+MO	Royal Jet	
+ROJ	Royal Jet	
+MP	Martinair	
+MPH	Martinair	
+MQ	American Eagle	
+EGF	American Eagle	
+MS	Egyptair	
+MSR	Egyptair	
+MT	Thomas Cook	
+MYT	Thomas Cook	
+MU	China Eastern	
+CES	China Eastern	
+MX	Mexicana	
+MXA	Mexicana	
+NG	Lauda Air	
+LDA	Lauda Air	
+NH	All-Nippon Airways	
+ANA	All-Nippon Airways	
+NK	Spirit Airlines	
+NKS	Spirit Airlines	
+NO	NEOS	
+NOS	NEOS	
+NQ	Air Japan	
+AJX	Air Japan	
+NU	Japan Transocean Air	
+JTA	Japan Transocean Air	
+NW	Northwest	
+NWA	Northwest	
+NZ	Air New Zealand	
+ANZ	Air New Zealand	
+OA	Olympic Airways	
+OAL	Olympic Airways	
+OK	CSA Czech Airlines	
+CSA	CSA Czech Airlines	
+ON	Air Nauru	
+RON	Air Nauru	
+OO	Skywest Airlines/Delta Connection/United Express	
+SKW	Skywest Airlines/Delta Connection/United Express	
+OS	Austrian Airlines	
+AUA	Austrian Airlines	
+OU	Croatia Airlines	
+CTN	Croatia Airlines	
+OZ	Asiana Airlines	
+AAL	Asiana Airlines	
+PE	Air Europe Italy	
+AEL	Air Europe Italy	
+PH	Polynesian	
+PAO	Polynesian	
+PK	Pakistan International Airlines	
+PIA	Pakistan International Airlines	
+PL	Air Pullmantur	
+PLM	Air Pullmantur	
+PO	Polar Air Cargo	
+PAC	Polar Air Cargo	
+PR	Philippine Airlines	
+PAL	Philippine Airlines	
+PS	Ukraine International Airlines	
+AUI	Ukraine International Airlines	
+PY	Surinam Airways	
+SLM	Surinam Airways	
+QF	Qantas	
+QFA	Qantas	
+QK	Jazz by Air Canada	
+JZA	Jazz by Air Canada	
+QR	Qatar Airways	
+QTR	Qatar Airways	
+QX	Horizion Air	
+QXE	Horizion Air	
+RG	Varig	
+VRG	Varig	
+RJ	Royal Jordanian	
+RJA	Royal Jordanian	
+RN	Air Horizion	
+EUH	Air Horizion	
+RO	Tarom	
+ROT	Tarom	
+RP	Chautauqua Airlines	
+CHQ	Chautauqua Airlines	
+RR	Royal Air Force	
+RFR	Royal Air Force	
+RS	Oman Royal Flight	
+ORF	Oman Royal Flight	
+S4	Sata International	
+RZO	Sata International	
+S7	Sibir/Siberia Airlines	
+SIB	Sibir/Siberia Airlines	
+SA	South African Airways	
+SAA	South African Airways	
+SB	Air Caledonie International	
+ACI	Air Caledonie International	
+SE	Star Airlines	
+SEU	Star Airlines	
+SH	FlyMe Sweden	
+FLY	FlyMe Sweden	
+SJ	Freedom Air	
+FOM	Freedom Air	
+SK	Scandinavian Airlines	
+SAS	Scandinavian Airlines	
+SN	SN Brussels Airlines	
+DAT	SN Brussels Airlines	
+SQ	Singapore Airlines	
+SIA	Singapore Airlines	
+SS	Corsair	
+CRL	Corsair	
+ST	Germania Express	
+GMI	Germania Express	
+SU	Aeroflot	
+AFL	Aeroflot	
+SV	Saudi Arabian Airlines	
+SVA	Saudi Arabian Airlines	
+SW	Air Nambia	
+NMB	Air Nambia	
+SY	Sun Country Airlines	
+SCX	Sun Country Airlines	
+SZ	China Southwest Airlines	
+CXN	China Southwest Airlines	
+T4	Hellas Jet	
+HEJ	Hellas Jet	
+TA	Taca	
+TAI	Taca	
+TB	TUI Airlines Belgium	
+TUA	TUI Airlines Belgium	
+TG	Thai International	
+THA	Thai International	
+TK	Turkish Airlines	
+THY	Turkish Airlines	
+TN	Air Tahiti Nui	
+THT	Air Tahiti Nui	
+TP	TAP Air Portugal	
+TAP	TAP Air Portugal	
+TS	Air Transat	
+TSC	Air Transat	
+TU	Tunisair	
+TAR	Tunisair	
+TX	Air Caraibes	
+FWI	Air Caraibes	
+TY	Iberworld	
+IWD	Iberworld	
+TZ	ATA Airlines	
+AMT	ATA Airlines	
+U2	EasyJet	
+EZY	EasyJet	
+U5	USA 3000	
+GWY	USA 3000	
+U8	Armavia	
+RNV	Armavia	
+UA	United Airlines	
+UAL	United Airlines	
+UL	Sri Lankan Airlines	
+ALK	Sri Lankan Airlines	
+UP	United Parcel Service(UPS)	
+UPS	United Parcel Service(UPS)	
+US	US Airways	
+USA	US Airways	
+UU	Air Austral	
+REU	Air Austral	
+UV	Universal Aviation	
+UX	Air Europa	
+AEA	Air Europa	
+UY	Cameroon Airlines	
+UYC	Cameroon Airlines	
+V7	Air Senegal	
+SNG	Air Senegal	
+VN	Vietnam Airlines	
+HVN	Vietnam Airlines	
+VS	Virgin Atlantic Airways	
+VKG	Virgin Atlantic Airways	
+VV	Aerosweet Airlines	
+AEW	Aerosweet Airlines	
+VW	VW	
+VY	Vueling.com	
+VLG	Vueling.com	
+VZ	myTravel Airways	
+MYT	myTravel Airways	
+W4	Aero Services Executive	
+BES	Aero Services Executive	
+W5	Mahan Air	
+IRM	Mahan Air	
+W6	Wizz Air	
+WZZ	Wizz Air	
+WH	China Northwest Airlines	
+CNW	China Northwest Airlines	
+WN	Southwest Airlines	
+SWA	Southwest Airlines	
+WO	World Airways	
+WOA	World Airways	
+WS	WestJet	
+WJA	WestJet	
+X3	Hapag Lloyd Express	
+HLX	Hapag Lloyd Express	
+XA	General Aviation	
+XE	Continental Express	
+BTA	Continental Express	
+XJ	Mesaba Airlines	
+MES	Mesaba Airlines	
+XK	CCM Compagnie Corse Mediterrannee	
+CCM	CCM Compagnie Corse Mediterrannee	
+XO	LTE International Airways	
+LTE	LTE International Airways	
+YK	KTHY - Kibris Turk Hava Yollari	
+KYV	KTHY - Kibris Turk Hava Yollari	
+YV	Mesa Airlines	
+ASH	Mesa Airlines	
+YX	Midwest Express Airlines	
+MEP	Midwest Express Airlines	
+YZ	Holland Exel	
+HXL	Holland Exel	
+Z4	Zoom Airlines	
+OOM	Zoom Airlines	
+ZB	Monarch Airlines	
+MON	Monarch Airlines	
+ZW	Air Wisconsin	
+AZW	Air Wisconsin	
