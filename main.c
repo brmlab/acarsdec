@@ -155,7 +155,7 @@ void print_mesg(msg_t * msg)
 	i=0;
 	while(acars_aircrafts_primary[i].reg){
 		const char *regtmp = (const char *) msg->addr;
-		if (regtmp[0] == '.')
+		while (regtmp[0] == '.')
 			regtmp++;
 		if(!strcmp(acars_aircrafts_primary[i].reg, regtmp)){
 			printf("Aircraft vendor: %s, ",acars_aircrafts_primary[i].vendor);
@@ -173,7 +173,7 @@ void print_mesg(msg_t * msg)
 	i=0;
 	while(acars_aircrafts_secondary[i].reg){
 		const char *regtmp = (const char *) msg->addr;
-		if (regtmp[0] == '.')
+		while (regtmp[0] == '.')
 			regtmp++;
 		if(!strcmp(acars_aircrafts_secondary[i].reg, regtmp)){
 			printf("Aircraft type: %s, ",acars_aircrafts_secondary[i].type);
