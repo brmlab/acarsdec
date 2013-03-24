@@ -38,7 +38,7 @@ static void usage(void)
 	fprintf(stderr, "Usage: acarsdec [-LR][-s noport] -d alsapcmdevice | -f sndfile \n");
 	fprintf(stderr, " -f sndfile :\t\tdecode from file sndfile (ie: a .wav file)\n");
 	fprintf(stderr, " -d alsapcmdevice :\tdecode from soundcard input alsapcmdevice (ie: hw:0,0)\n");
-	fprintf(stderr, " [-LR] :\t\tdiseable left or right channel decoding of stereo signal\n");
+	fprintf(stderr, " [-LR] :\t\tdisable left or right channel decoding of stereo signal\n");
 	fprintf(stderr, " [-s noport ] :\t\tact as an APRS local server, on port : noport\n");
 	fprintf(stderr, "Input could be mono or stereo but with 48Khz sampling frequency.\nIf stereo, acarsdec will demod the 2 channels independantly (if no L ou R options specified)\n\n");
 	exit(1);

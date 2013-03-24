@@ -29,7 +29,7 @@ acarsdec could be called with the following options :
 acarsdec [-LR][-s noport] -d alsapcmdevice | -f sndfile 
  -f sndfile :           decode from file sndfile (ie: a .wav file)
  -d alsapcmdevice :     decode from soundcard input alsapcmdevice (ie: hw:0,0)
- [-LR] :                diseable left or right channel decoding of stereo signal (save cpu)
+ [-LR] :                disable left or right channel decoding of stereo signal (save cpu)
  [-s noport ] :         "xastir" mode : act as an APRS local server, on port : noport (see below)
 
 Input could be mono or stereo but with 48Khz sampling frequency.
