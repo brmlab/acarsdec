@@ -6,25 +6,27 @@ Aircraft Communication Addressing and Reporting System (or ACARS) is a digital d
 
 ## HOW DOES IT WORK ?
 
-To receive ACARS you need at least an AM VHF air band receiver tuned to one of these frequencies :
+To receive ACARS you need at least an AM VHF air band receiver tuned to one of these frequencies:
 
 - 131.725	Europe primary
 - 131.525	European secondary
 - 131.550	USA primary
 - 130.025	USA secondary
 - 131.450 Japan primary
-(these are the most common, google is your friend for other frequencies)
+
+(These frequencies are the most common, Google is your friend for other frequencies)
 
 Audio output from this receiver is send to the soundcard input of your PC under Linux.
 Then, acarsdec will demodulate the signals sent by aircrafts and print the received messages on its standart output in airnav log text format.
 
 ## BUILDING IT
 On a Linux system, you will need libsnd librairy, alsa audio system and gcc/make installed.
-Then just type :
+
+Then just type:
 `make`
 
 ## USING IT
-acarsdec could be called with the following options :
+acarsdec could be called with the following options:
 ```
 acarsdec [-LR][-s noport] -d alsapcmdevice | -f sndfile
  -f sndfile :           decode from file sndfile (ie: a .wav file)
@@ -41,7 +43,8 @@ Typical usage for realtime decoding is :
 
 Be sure that correct record level is set for the used soundcard input.
 For testing, you could try to record your receiver output at 48khz sampling frequency with any audio recording tool.
-Save as wav file, then decode it by :
+
+Save as wav file, then decode it by:
 `acarsdec -f audiofile.wav`
 
 
@@ -55,16 +58,19 @@ PS: position decoding is in experimental stage. Mail me if you find errors or la
 start acarsdec with the following option :
 `acarsdec -d hw:0 -s 14000`
 
-Then in xastir, choose : Interface->Interface Control->Add
-Select : Internet Server, then Add
-Set Host at 127.0.0.1, Port 14000, Don't allow transmitting, then Ok.
+Then in xastir, choose: 
+- Interface → Interface Control → Add
+- Select: Internet Server, then Add
+- Set Host at 127.0.0.1, Port 14000, Don't allow transmitting, then Ok.
+
 This will add an interface in the Interface Control dialog.
 
 Then select this interface and press start.
-To check that acarsdec send messages to xastir, select View->Incoming traffic
-ACARS messages look like that in xastir :
+To check that acarsdec send messages to xastir, select View→Incoming traffic
+
+ACARS messages look like that in xastir:
+```
 F-XXYZ>ACARS:>Fid:AFXXXX Lbl:Q0
+```
 
 Lots of ACARS messages are messages without position report, so be patient before seeing aircraft plotted on the map.
-
-
