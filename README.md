@@ -1,8 +1,8 @@
 # ACARSDEC
 
-Acarsdec is an open source, realtime  ACARS demodulator and position decoder for Linux.
-
 Aircraft Communication Addressing and Reporting System (or ACARS) is a digital datalink system for transmission of small messages between aircraft and ground stations via VHF radio.
+
+Acarsdec is an open source, realtime ACARS demodulator and position decoder for Linux.
 
 ## HOW DOES IT WORK ?
 
@@ -17,10 +17,10 @@ To receive ACARS you need at least an AM VHF air band receiver tuned to one of t
 (These frequencies are the most common, Google is your friend for other frequencies)
 
 Audio output from this receiver is send to the soundcard input of your PC under Linux.
-Then, acarsdec will demodulate the signals sent by aircrafts and print the received messages on its standart output in airnav log text format.
+Then, acarsdec will demodulate the signals sent by aircraft and print the received messages on its standard output in airnav log text format.
 
 ## BUILDING IT
-On a Linux system, you will need libsnd librairy, alsa audio system and gcc/make installed.
+On a Linux system, you will need libsnd library, alsa audio system and gcc/make installed.
 
 Then just type:
 `make`
@@ -36,7 +36,7 @@ acarsdec [-LR][-s noport] -d alsapcmdevice | -f sndfile
 ```
 
 Input could be mono or stereo but with 48Khz sampling frequency.
-If stereo, acarsdec will demod the 2 channels independantly (if no L ou R options specified)
+If stereo, acarsdec will demod the 2 channels independently (if no L or R options specified)
 
 Typical usage for realtime decoding is :
 `acarsdec -d hw:0`
@@ -49,19 +49,20 @@ Save as wav file, then decode it by:
 
 
 ## USING IT WITH XASTIR
-acarsdec have a special output mode to use it with APRS position reporting plotting program : [xastir](www.xastir.org).
+acarsdec have a special output mode to use it with APRS position reporting plotting program: [xastir](www.xastir.org).
+
 In this mode, acarsdec acts as a very basic local aprsd server.
 ACARS messages, and in particular, position report messages are converted to APRS format, so you can plot aircraft positions on a map.
 
 PS: position decoding is in experimental stage. Mail me if you find errors or lack of position reporting.
 
-start acarsdec with the following option :
+Start acarsdec with the following option:
 `acarsdec -d hw:0 -s 14000`
 
 Then in xastir, choose: 
 - Interface → Interface Control → Add
 - Select: Internet Server, then Add
-- Set Host at 127.0.0.1, Port 14000, Don't allow transmitting, then Ok.
+- Set Host at 127.0.0.1, Port 14000, Don't allow transmitting, then OK.
 
 This will add an interface in the Interface Control dialog.
 
